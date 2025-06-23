@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import Nuke
+import NukeExtensions
 
 class DetailViewController: UIViewController {
 
@@ -87,7 +87,7 @@ class DetailViewController: UIViewController {
            let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500" + posterPath) {
 
             // Use the Nuke library's load image function to (async) fetch and load the image from the image url.
-            Nuke.loadImage(with: imageUrl, into: posterImageView)
+            NukeExtensions.loadImage(with: imageUrl, into: posterImageView)
         }
 
         // Unwrap the optional backdrop path
@@ -97,7 +97,7 @@ class DetailViewController: UIViewController {
            let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500" + backdropPath) {
 
             // Use the Nuke library's load image function to (async) fetch and load the image from the image url.
-            Nuke.loadImage(with: imageUrl, into: backdropImageView)
+            NukeExtensions.loadImage(with: imageUrl, into: backdropImageView)
         }
     }
 

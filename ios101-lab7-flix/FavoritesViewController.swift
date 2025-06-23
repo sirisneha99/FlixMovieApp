@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import Nuke
+import NukeExtensions
 
 class FavoritesViewController: UIViewController, UITableViewDataSource {
 
@@ -53,7 +53,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
            let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500" + posterPath) {
 
             // Use the Nuke library's load image function to (async) fetch and load the image from the image url.
-            Nuke.loadImage(with: imageUrl, into: cell.posterImageView)
+            NukeExtensions.loadImage(with: imageUrl, into: cell.posterImageView)
         }
 
         // Set the text on the labels
