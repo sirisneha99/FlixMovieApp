@@ -28,8 +28,12 @@ class FavoritesViewController: UIViewController, UITableViewDataSource {
             // Show the "Empty Favorites" label if there are no favorite movies
             emptyFavoritesLabel.isHidden = !favoriteMovies.isEmpty
         }
-
-        // TODO: Get favorite movies and display in table view
+        
+        let movies = Movie.getMovies(forKey: Movie.favoritesKey)
+        // 2.
+        self.favoriteMovies = movies
+        // 3.
+        tableView.reloadData()
 
 
     }

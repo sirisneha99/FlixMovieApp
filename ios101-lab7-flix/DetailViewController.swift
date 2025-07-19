@@ -15,15 +15,38 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var voteLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
-
-    // TODO: Add favorite button outlet
-
-    // TODO: Add favorite button action
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    
+    @IBAction func didTapFavorriteButton(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            // 1.
+            movie.addToFavorites()
+        } else {
+            // 2.
+            movie.removeFromFavorites()
+        }
+    }
+    
 
     var movie: Movie!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let favorites = Movie.getMovies(forKey: Movie.favoritesKey)
+        // 2.
+        if favorites.contains(movie) {
+            // 3.
+            favoriteButton.isSelected = true
+        } else {
+            // 4.
+            favoriteButton.isSelected = false
+        }
+
 
         // TODO: Update favorite button selected state
 
@@ -40,6 +63,9 @@ class DetailViewController: UIViewController {
         posterImageShadowView.layer.shadowOpacity = 0.5
         posterImageShadowView.layer.shadowOffset = CGSize(width: -3, height: 0)
         posterImageShadowView.layer.shadowRadius = 5
+        
+        favoriteButton.layer.cornerRadius = favoriteButton.frame.width / 2
+
 
         // MARK: - Set text for labels
         titleLabel.text = movie.title
