@@ -17,7 +17,7 @@ This app allow users to save their favorite movies and view them in a "favorites
 <div align="center">
   <img src="./sim1.png" alt="Home" width="180">
   <img src="./sim2.png" alt="Profile" width="180">
-  <img src="./sim3.png" alt="Settings" width="180">
+  <img src="./sim4.png" alt="Settings" width="180">
   <img src="./sim4.png" alt="Settings" width="180">
 </div>
 
